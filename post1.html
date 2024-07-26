@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href=resources/css/labsBlog.css rel=stylesheet>
+        <title>TiRaMiSu CAKE</title>
+    </head>
+    <body>
+    <script src="resources/labheader/js/labHeader.js"></script>
+        <div theme="blog">
+            <section class="maincontainer">
+                <div class="container is-page">
+                    <header class="navigation-header">
+                        <section class="top-links">
+                            <a href="index.html">Home</a><p>|</p>
+                        </section>
+                    </header>
+                    <header class="notification-header">
+                    </header>
+                    <div class="blog-post">
+                    <img src="/image/blog/posts/9.jpg">
+                    <h1>I Wanted A Bike</h1>
+                    <p><span id=blog-author>Carrie Atune</span> | 28 June 2024</p>
+                    <hr>
+                    <p>When it comes the holidays more and more people are finding it hard to make ends meet. They turn to Social Media and ask for advice, how they can make Christmas magical for their little ones when they don&apos;t have any spare money. So many kind humanitarians reassure them that time is the best gift they can give their kids, a day of fun-filled frolicking.</p>
+                    <p>I didn&apos;t want to spend the day with my parents watching movies and eating chocolate. I wanted a bike. Not having money, and not buying me a bike does make you a rubbish parent regardless of what all the nosey parker do-gooders tell you. They say it is all about &apos;making memories&apos;, well that sucks, I&apos;ll NEVER forget the Christmas I didn&apos;t get that bike, how&apos;s that for making memories.</p>
+                    <p>Why do all these people dishing out their meaningless platitudes think that families want to spend the day trapped in the house together, it&apos;s not like we even have any old relatives to visit and brighten up the proceedings with a snort and inappropriate passing of wind during dinner. You want to keep me trapped like a prisoner in the house all day and make memories, then you should have bought me that bike.</p>
+                    <div>
+                        <hr>
+                        <h1>Comments</h1>
+                        <span id='user-comments'>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.15/purify.min.js"></script>
+                        <script src='resources/js/loadComments.js'></script>
+                        <script>
+                            // 댓글 불러오기
+                            function loadComments() {
+                                fetch('get_comments.php')
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        const commentsContainer = document.getElementById('user-comments');
+                                        commentsContainer.innerHTML = '';
+                                        data.forEach(comment => {
+                                            const commentElement = document.createElement('div');
+                                            commentElement.innerHTML = `
+                                                <p><strong>${comment.name}</strong> | ${comment.date}</p>
+                                                <p>${comment.comment}</p>
+                                                <hr>
+                                            `;
+                                            commentsContainer.appendChild(commentElement);
+                                        });
+                                    });
+                            }
+                            loadComments();
+                        </script>
+                    </span>
+                        <hr>
+                        <section class="add-comment">
+                            <h2>Leave a comment</h2>
+                            <form id="comment-form" action="post_comment.php" method="POST" enctype="application/x-www-form-urlencoded">
+                                <input required type="hidden" name="csrf" value="N6xOiYmiK8fc0QVFSBJe947MloJpnKkL">
+                                <input required type="hidden" name="postId" value="7">
+                                <label>Comment:</label>
+                                <textarea required rows="12" cols="300" name="comment" placeholder="HTML is allowed"></textarea>
+                                        <label>Name:</label>
+                                        <input required type="text" name="name">
+                                        <label>Email:</label>
+                                        <input required type="email" name="email">
+                                        <label>Website:</label>
+                                        <input pattern="(http:|https:).+" type="text" name="website">
+                                <button class="button" type="submit">Post Comment</button>
+                            </form>
+                        </section>
+                        <div class="is-linkback">
+                            <a href="index.html">Back to Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="footer-wrapper"></div>
+        </div>
+        <script>
+            // 폼 제출 시 AJAX 요청 처리
+            document.getElementById('comment-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const form = event.target;
+                const formData = new FormData(form);
+                fetch(form.action, {
+                    method: 'POST',
+                    body: formData
+                }).then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        // 댓글을 성공적으로 추가한 후, 댓글 목록을 다시 로드
+                        loadComments();
+                        form.reset(); // 폼 초기화
+                    } else {
+                        alert('Failed to post comment');
+                    }
+                }).catch(error => {
+                    console.error('Error posting comment:', error);
+                });
+            });
+        </script>
+    </body>
+</html>
