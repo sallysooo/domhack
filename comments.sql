@@ -1,0 +1,15 @@
+CREATE DATABASE blog;
+
+USE blog;
+
+CREATE TABLE comments(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    postId INT NOT NULL,
+    author VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    website VARCHAR(100),
+    avatar VARCHAR(255),
+    body TEXT NOT NULL,
+    data TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+

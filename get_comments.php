@@ -1,12 +1,34 @@
 <?php
-header('Content-Type: application/json');
+    header('Content-Type: application/json');
 
-$file = 'comments.json';
+    $servername = "localhost";
+    $username = "root";
+    $password = "root1234";
+    $dbname = "blog";
 
-if (file_exists($file)) {
-    $comments = json_decode(file_get_contents($file), true);
+    // Create connection
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $postId = $_GET['postId'];
+    $sql = "SELECT author, email, website, avatar, body, date FROM comments WHERE postId = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("i", $postId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $comments = array();
+    while ($row = $result->fetch_assoc()) {
+        $comments[] = $row;
+    }
+
     echo json_encode($comments);
-} else {
-    echo json_encode([]);
-}
+
+    $stmt->close();
+    $conn->close();
 ?>
+
