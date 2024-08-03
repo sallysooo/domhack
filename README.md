@@ -10,3 +10,13 @@
 
 <br/>
 
+### 5주차 
+<br/>홈페이지 -> index.html
+<br/>포스팅 글 -> post1.html 만 일단 만들기로...함 / 그리고 postId도 구현해보려고 했는데 어케 하는지 몰라서 그냥 제거 
+<br/>댓글 로드 -> get_comments.php 
+<br/>댓글 서버로 가져와서 JSON 파일에 저장 -> post_comment.php => db 사용 안하고 loadComments.js 코드에 따라서 JSON 파일에 저장하는 방법 이용
+<br/>취약점 포함 js 파일 -> loadComments.js
+<br/>DOMPurify 외부에서 불러오기 -> https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.15/purify.min.js"
+<br/>flag.py 코드 짜서 flag.txt 만들었음
+
+<br/>
