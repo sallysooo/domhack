@@ -18,5 +18,5 @@
 <br/>취약점 포함 js 파일 -> loadComments.js
 <br/>DOMPurify 외부에서 불러오기 -> https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.15/purify.min.js"
 <br/>flag.py 코드 짜서 flag.txt 만들었음
-
-<br/>
+<br/>댓글 JSON 파일에 저장되고 정상적으로 로드되는 모습!<br/>
+![image](https://github.com/user-attachments/assets/db751ca1-4e24-4d8f-a58c-454cef3a8865)
