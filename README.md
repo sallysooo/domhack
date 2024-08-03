@@ -20,4 +20,9 @@
 - flag.py 코드 짜서 flag.txt 만들었음
 - 댓글 JSON 파일에 저장되고 정상적으로 로드되는 모습!
   <br><br>
-![image](https://github.com/user-attachments/assets/db751ca1-4e24-4d8f-a58c-454cef3a8865)
+![image](https://github.com/user-attachments/assets/e08ca710-3a6e-4de1-9ca3-5113e736b610)
+<br>
+- 익스 코드 삽입 후 alert() 정상적으로 동작하는 모습
+![image](https://github.com/user-attachments/assets/9372fc18-150b-4e8b-8ca8-8f95d79c5688)
+<br>
+
