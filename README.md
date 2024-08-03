@@ -21,9 +21,13 @@
 - 댓글 JSON 파일에 저장되고 정상적으로 로드되는 모습!
   <br><br>
 ![image](https://github.com/user-attachments/assets/e08ca710-3a6e-4de1-9ca3-5113e736b610)
-<br>
+<br><br>
 - 익스 코드 삽입 후 alert() 정상적으로 동작하는 모습
   <br><br>
-![image](https://github.com/user-attachments/assets/304a734c-d4d9-4436-aea8-45ee195451fb)
-<br>
+<img src="https://github.com/user-attachments/assets/304a734c-d4d9-4436-aea8-45ee195451fb" width="400" height="150">
+<br><br>
+- 적절한 위치에 삽입된 익스 코드
+  <br><br>
+<img src="https://github.com/user-attachments/assets/c03b3682-96be-4e87-8d99-b4672a0678e3" width="500" height="400">
+
 
