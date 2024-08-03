@@ -7,12 +7,13 @@
         <title>Exploiting DOM clobbering to enable XSS</title>
     </head>
     <body>
+        <script src="/resources/labheader/js/labHeader.js"></script>
         <div theme="blog">
             <section class="maincontainer">
                 <div class="container is-page">
                     <header class="navigation-header">
                         <section class="top-links">
-                            <a href="/">Home</a><p>|</p>
+                            <a href=/>Home</a><p>|</p>
                         </section>
                     </header>
                     <header class="notification-header">
@@ -20,7 +21,7 @@
                     <h1>Thank you for your comment!</h1>
                     <p>Your comment has been submitted.</p>
                     <div class="is-linkback">
-                        <a href="/post?postId=3">Back to blog</a>
+                        <a href="/post?postId=10">Back to blog</a>
                     </div>
                 </div>
             </section>
