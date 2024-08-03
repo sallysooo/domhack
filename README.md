@@ -23,6 +23,7 @@
 ![image](https://github.com/user-attachments/assets/e08ca710-3a6e-4de1-9ca3-5113e736b610)
 <br>
 - 익스 코드 삽입 후 alert() 정상적으로 동작하는 모습
+  <br><br>
 ![image](https://github.com/user-attachments/assets/9372fc18-150b-4e8b-8ca8-8f95d79c5688)
 <br>
 
