@@ -18,13 +18,15 @@
                     </header>
                     <div class="blog-post">
                         <br>
-                        <img src="resources/images/tiramisu1.jpg" width="675" height="450"> 
-                        <h1>All About Tiramisu</h1>
-                        <p><span id=blog-author>Jisoo Kim</span> | 28 June 2024</p>
+                        <img src="resources/images/tiramisu2.png" width="675" height="450"> 
+                        <h1>My Favorite Tiramisu Layer Cake</h1>
+                        <p><span id=blog-author>Christina Tosi</span> | 14 June 2024</p>
                         <hr>
-                        <p>Tiramisu (Italian - tiramisù) is an Italian dessert made of ladyfinger pastries (savoiardi) dipped in coffee, layered with a whipped mixture of eggs, sugar, and mascarpone and flavoured with cocoa. The recipe has been adapted into many varieties of cakes and other desserts. Its origin is disputed between the Italian regions of Veneto and Friuli-Venezia Giulia. The name comes from the Italian tirami su ('pick me up' or 'cheer me up')</p>
-                        <p>Traditional tiramisu contains ladyfingers (savoiardi), egg yolks, sugar, coffee, mascarpone, and cocoa powder. A common variant involves soaking the savoiardi in alcohol, such as Marsala wine, amaretto or a coffee-based liqueur. The original tiramisu made at Le Beccherie was circular.</p>
-                        <p>The original shape of the cake is round, although the shape of the biscuits also allows the use of a rectangular or square pan. However, it is often assembled in round glasses, which show the various layers, or pyramids. Modern versions can have the addition of whipped cream or whipped egg whites, or both, combined with mascarpone. This makes the dish lighter, thick and foamy. Among the most common alcoholic changes includes the addition of Marsala wine. The cake is usually eaten cold.</p>
+                        <p>Tiramisu is so luxurious and fancy, even saying the word makes you want to put your pinky out. This Tiramisu Layer Cake is certainly lush, but it's got a lot of heart too.</p>
+                        <p>On a trip to visit her father's family in Northern Italy, surrounded by warmth and the smell of fresh, strong coffee, Tosi learned her family's tiramisu recipe. Soon, the time came for her to celebrate this recipe-keepsake on her own terms. And this layer cake is just that.</p>
+                        <p>This Milk Bar twist on Italy's famous dessert starts by giving your vanilla cake an invigorating bath in a deep, bitter coffee soak. Then layer those cake rounds with chunky chocolate crumbs, velvety coffee frosting, and a rich cannoli cream that combines liquid cheesecake, ricotta and mascarpone—because when your cake is extra, why not?</p>
+                        <p>Fun baking fact: tiramisu (and cannoli filling) usually call for ricotta or mascarpone. At Milk Bar, we like to be extra, so our tiramisu has not one, not two, but three cheese components!</p>
+                        <p>Bring this to your next fancy-ish get-together or share with your favorite people who love Italian desserts (or coffee) just as much as you.</p>
                         <div>
                             <hr>
                             <h1>Comments</h1>
@@ -64,17 +66,17 @@
     
                 let formData = new FormData(this);
     
-                fetch('post/post_comment.php', { // 댓글 등록 시 post_comment.php로 보내져 댓글이 comments.json에 저장됨
+                fetch('post/post_comment2.php', { // 댓글 등록 시 post_comment.php로 보내져 댓글이 comments.json에 저장됨
                     method: 'POST',
                     body: formData
                 }).then(response => response.text()).then(data => {
-                    loadComments('post/get_comments.php');
+                    loadComments('post/get_comments2.php');
                 }).catch(error => console.error('Error:', error));
             });
             
             // 댓글이 로드될 때는 get_comments.php를 통해 comments.json에서 데이터를 불러옴 
             window.onload = function() {
-                loadComments('post/get_comments.php');
+                loadComments('post/get_comments2.php');
             };
 
             // (XSS injection) onerror 삽입으로 flag 불러오기
