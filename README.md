@@ -31,4 +31,25 @@
   <br><br>
 <img src="https://github.com/user-attachments/assets/c03b3682-96be-4e87-8d99-b4672a0678e3" width="500" height="400">
 
+<br><br>
 
+### 6주차 
+- post1~5까지 모두 만드려고 했으나 php 작성 형식을 각 페이지 별로 대응시켜 구성하는 바람에 그냥 post2.html만 추가로 만듦.. (문제 풀이 시 추가 테스트 용도)
+- 우분투에 구축하기 성공!
+<br><br>
+![image](https://github.com/user-attachments/assets/61075703-6f68-4c1d-bed4-f2e17d3cd73b)
+<br><br>
+- apache 및 php 설치하여 위와 같이 localhost로 문제 불러오기 완료
+<br><br>
+![image](https://github.com/user-attachments/assets/c837ab92-1e3f-43c1-9bfd-faa97f0ebd23)
+<br><br>
+- 댓글에 익스플로잇 코드 삽입
+<br><br>
+![image](https://github.com/user-attachments/assets/74c90ac5-3ab7-4c8d-8785-004db3257e47)
+<br><br>
+- 두 번째 댓글을 달아야 코드가 적용되어 flag 페이지로 이동 가능
+<br><br>
+![image](https://github.com/user-attachments/assets/b574181b-d615-486b-85a7-6c89895a7a39)
+<br><br>
+- 플래그 페이지까지 이동 가능한 것 확인 + 다른 익스 코드나 올바르지 않은 방식으로 displayFlag() 호출했을 때는 Forbidden으로 접근 제한되는 것도 확인 
+<br><br>
