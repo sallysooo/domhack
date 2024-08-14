@@ -11,9 +11,6 @@ RUN apt-get update -y && \
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
-RUN chown -R www-data:www-data /var/www/html
-RUN chmod -R 755 /var/www/html
-
 # Set up PHP session directory
 RUN mkdir -p /var/lib/php/sessions && \
     chown -R www-data:www-data /var/lib/php/sessions && \
