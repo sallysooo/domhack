@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// 세션에 특정 값이 없으면 접근을 차단
 if(!isset($_SESSION['can_access_flag']) || $_SESSION['can_access_flag'] !== true) {
     http_response_code(403);
     die("Forbidden");

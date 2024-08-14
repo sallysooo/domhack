@@ -58,26 +58,28 @@
             <div class="footer-wrapper">
             </div>
         </div>
-        <script> // 댓글 등록 및 로드 과정 자동화 
+        <script> 
             document.getElementById('commentForm').addEventListener('submit', function(e) {
-                e.preventDefault(); // 기본 폼 제출을 막음 (새로고침 방지)
+                e.preventDefault(); 
     
                 let formData = new FormData(this);
     
-                fetch('post/post_comment.php', { // 댓글 등록 시 post_comment.php로 보내져 댓글이 comments.json에 저장됨
+                fetch('post/post_comment.php', {
                     method: 'POST',
                     body: formData
-                }).then(response => response.text()).then(data => {
-                    loadComments('post/get_comments.php');
+                }).then(response => response.json()).then(data => {
+                    if (data.status === 'success') {
+                        location.reload();  // 페이지 새로고침
+                    } else {
+                        console.error('Error:', data.message);
+                    }
                 }).catch(error => console.error('Error:', error));
             });
             
-            // 댓글이 로드될 때는 get_comments.php를 통해 comments.json에서 데이터를 불러옴 
             window.onload = function() {
                 loadComments('post/get_comments.php');
             };
 
-            // (XSS injection) onerror 삽입으로 flag 불러오기
             function displayFlag() {
                 fetch('post/set_session.php')
                     .then(response => response.text())

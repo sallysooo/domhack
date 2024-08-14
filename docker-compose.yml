@@ -1,0 +1,12 @@
+#docker-compose.yml
+version: "3"
+ 
+services:
+  main:
+    build: .
+    container_name: tiramisu_cake
+    volumes:
+      - "./src:/var/www/html"
+    ports:
+      - 916:80
+    restart: always

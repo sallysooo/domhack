@@ -1,4 +1,4 @@
-// 댓글 로드하는 함수
+
 function loadComments(postCommentPath) { 
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
@@ -27,12 +27,9 @@ function loadComments(postCommentPath) {
 
             let firstPElement = document.createElement("p");
             
-            // 기본 아바타 URL 설정 
             let defaultAvatar = window.defaultAvatar || {avatar: 'resources/images/avatarDefault.png'}
-            // 아바타 이미지 HTML 코드 생성, 아바타 URL이 없으면 기본 아바타 사용 
             let avatarImgHTML = '<img class="avatar" src="' + (comment.avatar ? escapeHTML(comment.avatar) : defaultAvatar.avatar) + '">';
 
-            // 아바타 이미지 추가
             let divImgContainer = document.createElement("div");
             divImgContainer.innerHTML = avatarImgHTML
 
