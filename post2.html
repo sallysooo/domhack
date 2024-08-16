@@ -27,6 +27,9 @@
                         <p>This Milk Bar twist on Italy's famous dessert starts by giving your vanilla cake an invigorating bath in a deep, bitter coffee soak. Then layer those cake rounds with chunky chocolate crumbs, velvety coffee frosting, and a rich cannoli cream that combines liquid cheesecake, ricotta and mascarpone—because when your cake is extra, why not?</p>
                         <p>Fun baking fact: tiramisu (and cannoli filling) usually call for ricotta or mascarpone. At Milk Bar, we like to be extra, so our tiramisu has not one, not two, but three cheese components!</p>
                         <p>Bring this to your next fancy-ish get-together or share with your favorite people who love Italian desserts (or coffee) just as much as you.</p>
+                        <br>
+                        <p>+ By the way, we prepared a special gift for who makes an alert() of 'Tiramisu' through the comment section below. After you success, you can submit it in the guest book page.</p>
+                        <p>Good Luck!</p>
                         <div>
                             <hr>
                             <h1>Comments</h1>
@@ -66,26 +69,21 @@
     
                 let formData = new FormData(this);
     
-                fetch('post/post_comment2.php', { 
+                fetch('post/post_comment2.php', {
                     method: 'POST',
                     body: formData
-                }).then(response => response.text()).then(data => {
-                    loadComments('post/get_comments2.php');
+                }).then(response => response.json()).then(data => {
+                    if (data.status === 'success') {
+                        location.reload();  
+                    } else {
+                        console.error('Error:', data.message);
+                    }
                 }).catch(error => console.error('Error:', error));
             });
             
             window.onload = function() {
                 loadComments('post/get_comments2.php');
             };
-
-            function displayFlag() {
-                fetch('post/set_session.php')
-                    .then(response => response.text())
-                    .then(() => {
-                        window.open('confirmation.php', '_blank');
-                    })
-                    .catch(error => console.error('Error setting session:', error));
-            }
         </script>
     </body>
 </html>

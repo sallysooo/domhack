@@ -2,6 +2,7 @@
 session_start();
 
 if(!isset($_SESSION['can_access_flag']) || $_SESSION['can_access_flag'] !== true) {
+    header('HTTP/1.0 403 Forbidden');
     http_response_code(403);
     die("Forbidden");
 }
@@ -40,6 +41,8 @@ if(!isset($_SESSION['can_access_flag']) || $_SESSION['can_access_flag'] !== true
         </div>
     </body>
 </html>
-
+<?php
+unset($_SESSION['can_access_flag']);
+?>
 
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href=resources/css/labsBlog.css rel=stylesheet>
+        <title>TiRaMiSu CAKE</title>
+    </head>
+    <body>
+        <div theme="blog">
+            <section class="maincontainer">
+                <div class="container is-page">
+                    <header class="navigation-header">
+                        <section class="top-links">
+                            <a href="index.html">Home</a><p>|</p>
+                        </section>
+                    </header>
+                    <header class="notification-header">
+                    </header>
+                    <div class="blog-post">
+                        <br>
+                        <img src="resources/images/guest.jpg" width="675"> 
+                        <h1>Guest Book</h1>
+                        <hr>
+                        <p>Welcome sweeties!</p>
+                        <p>If you liked our posts of our blog, please leave a short message here to enspire our bloggers.</p>
+                        <br>
+                        <p>Special Event going on - Submit the 'Tiramisu' alert code below, and you'll get a secret gift...</p>
+                        <p>Check out the posts for more infos about this event.</p>
+                        <p>Good Luck!</p>
+                        <div>
+                            <span id='user-comments'>
+                                <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/2.0.15/purify.min.js"></script>
+                                <script src='resources/js/loadComments.js'></script>
+                            </span>
+                        <hr>
+                        <section class="add-comment">
+                            <h2>Leave a comment</h2>
+                            <form action="submit_comment.php" method="POST">
+                                <textarea required rows="12" cols="300" name="comment" placeholder="Your comment here..."></textarea>
+                                <button class="button" type="submit">Submit</button>
+                            </form>
+                        </section>
+                        <br><br>
+                        <div class="is-linkback">
+                            <a href="index.html">Back to Blog</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="footer-wrapper">
+            </div>
+        </div>
+    </body>
+</html>
