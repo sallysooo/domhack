@@ -57,7 +57,8 @@
 
 ### ctf 직전 최종 수정
 - confirmation.php로 이동하여 플래그를 얻게 했었는데, 하드코딩으로 설정한 관계로 당일에 급히 플래그 노출 방식을 alert()로 변경함. 그러나 언인텐의 발단이었음
-- post/를 url에 치면 post 폴더에 생성되는 json 파일들을 실시간으로 모두 열람하게 되는 오류를 발견하여 .htaccess 파일 생성 및 도커파일 수정
+- post/를 url에 치면 post 폴더에 생성되는 json 파일들을 실시간으로 모두 열람하게 되는 오류를 발견하여 .htaccess 파일 생성 및 도커파일 수정하여 forbidden 시킴
+<br><img src="https://github.com/user-attachments/assets/94b736ba-1ac1-4b32-8f9d-ad032027af3b" width="400" height="150">
 - 계획했던 익스플로잇 코드 -> `<a id=defaultAvatar><a id=defaultAvatar name=avatar href="cid:&quot;onerror=alert('Tiramisu')//">`
 <br><br>
 ### 해캠 회고록과 이후 언인텐 수정 내역
@@ -68,13 +69,13 @@
 
 <br>
 다음은 2번 방법으로 해캠 이후 혼자 언인텐들 수정해본 현황 <br>
-<img src="https://github.com/user-attachments/assets/12bb64ef-6c1d-4abd-9cd3-0b9fefb2d0fe" width="600" height="400">
+<img src="https://github.com/user-attachments/assets/12bb64ef-6c1d-4abd-9cd3-0b9fefb2d0fe" width="650" height="400"><br>
 
 <br><br>
 - submit_comment.php 수정 코드 <br>
 - 풀 하드코딩 대신 최소한 dom clobbering으로 풀이하도록 유도하되, 띄어쓰기나 이벤트 핸들러 이용의 다양성을 제공하기 위해 핵심 필수 키워드인 defaultAvatar와 cid:를 검증값으로 수정
 <br><br>
-<img src="https://github.com/user-attachments/assets/784e38cc-c3be-458c-b06b-3e6c70c43b9a" width="1000" height="550">
+<img src="https://github.com/user-attachments/assets/784e38cc-c3be-458c-b06b-3e6c70c43b9a" width="1000" height="540">
 
 <br><br>
 아쉽지만 일단 이미 끝났고 지나간 일이니 훌훌 털어버리고, 이를 밑바탕으로 다음 동계 해캠때는 제대로 된 문제를 꼭 출제해야겠다! 미련이 남는건 어쩔 수 없지만 그렇다고 계속 여기에 머물러 있는 것은 나의 성장에 그다지 도움이 되지 않기에.. 이번에는 인생 첫 출제였으니 모든게 낯설고 처음이었지만 다음 동계 해캠때는 문제 제작 자체에만 집중할 수 있기에 더 언인텐 방지 뿐만 아니라 창의적이면서 체계적인 풀이 구조를 만들어낼 수 있을 것 같다. 그리고 다음에는 꼭 이번처럼 alert()로 solve되는 워게임이 아니라, 마무리에 flag를 획득하는 형태의 워게임을 참고하도록 하자...^^ (중요)
