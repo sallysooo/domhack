@@ -63,7 +63,6 @@
             <div class="footer-wrapper">
             </div>
         </div>
-        <?php include('post/detect.php'); ?>
         <script src="resources/js/commentHandler2.js"></script>
     </body>
 </html>

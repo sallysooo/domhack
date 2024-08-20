@@ -11,6 +11,7 @@ RUN apt-get update -y && \
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
+# .htaccess 추가 시 삽입
 RUN sed -i '/<\/VirtualHost>/i\
     <Directory /var/www/html>\n\
         AllowOverride All\n\

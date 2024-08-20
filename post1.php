@@ -42,7 +42,7 @@
                                 <input required type="hidden" name="csrf" value="N6xOiYmiK8fc0QVFSBJe947MloJpnKkL">
                                 <input required type="hidden" name="postId" value="1">
                                 <label>Comment:</label>
-                                <textarea required rows="12" cols="300" name="comment" placeholder="HTML is allowed"></textarea>
+                                <textarea required rows="12" cols="300" name="comment" placeholder="The avatar is cute isn't it..."></textarea>
                                         <label>Name:</label>
                                         <input required type="text" name="name">
                                         <label>Email:</label>
@@ -61,7 +61,6 @@
             <div class="footer-wrapper">
             </div>
         </div>
-        <?php include('post/detect.php'); ?>
         <script src="resources/js/commentHandler.js"></script>
     </body>
 </html>
