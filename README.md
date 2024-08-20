@@ -59,8 +59,8 @@
 - confirmation.php로 이동하여 플래그를 얻게 했었는데, 하드코딩으로 설정한 관계로 당일에 급히 플래그 노출 방식을 alert()로 변경함. 그러나 언인텐의 발단이었음
 - post/를 url에 치면 post 폴더에 생성되는 json 파일들을 실시간으로 모두 열람하게 되는 오류를 발견하여 .htaccess 파일 생성 및 도커파일 수정
 - 계획했던 익스플로잇 코드 -> `<a id=defaultAvatar><a id=defaultAvatar name=avatar href="cid:&quot;onerror=alert('Tiramisu')//">`
-<br>
-### 해캠 이후 회고록과 반성,,,
+<br><br>
+### 해캠 이후 회고록과 반성
 - alert()를 콘솔창에 치기만 하면 flag가 노출되는 치명적인 언인텐 발견... << 다음에는 js로 flag를 노출하는 방식은 피하도록 하자.
 - 속상함은 잠시, 이제는 언인텐을 막을 수 있었던 방법들을 생각해보자.
 1. dom clobbering을 사용하는 것이 핵심이니까 입력 xss를 풀 하드코딩으로 설정하지는 않아도, 꼭 필요한 id인 defaultAvatar 정도를 포함하는 경우를 조건으로 설정했었더라면 이런 심각한 언인텐은 방지할 수 있었을 것.
