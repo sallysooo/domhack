@@ -65,13 +65,14 @@
 - 속상함은 잠시, 이제는 언인텐을 막을 수 있었던 방법들을 생각해보자.
 1. dom clobbering을 사용하는 것이 핵심이니까 입력 xss를 풀 하드코딩으로 설정하지는 않아도, 꼭 필요한 id인 defaultAvatar 정도를 포함하는 경우를 조건으로 설정했었더라면 이런 심각한 언인텐은 방지할 수 있었을 것.
 2. 일단 js를 사용해서 flag를 노출하는 것은 이렇게 수많은 언인텐이 나오는 것 같으므로, 기존의 guest book php 페이지를 재활용하여 여기서 href로 무엇을 넣었는지 or id는 무엇인지와 같은 키워드를 입력하는 방식으로 코딩했다면 언인텐을 막을 수 있었을 것 같다. 생각해보니 이 방법이 제일 나았던 것 같은데, 아무래도 문제 검수 후 ctf 시작까지의 시간이 너무나 촉박했어서 언인텐이 나올 수 밖에 없었던 것 같아 아쉬울 따름이다.
+
 <br>
 다음은 2번 방법으로 해캠 이후 혼자 언인텐들 수정해본 현황 <br>
 <img src="https://github.com/user-attachments/assets/12bb64ef-6c1d-4abd-9cd3-0b9fefb2d0fe" width="600" height="400">
-<br>
-- submit_comment.php 수정 코드
+
+<br><br>
+- submit_comment.php 수정 코드 <br>
 - 풀 하드코딩 대신 최소한 dom clobbering으로 풀이하도록 유도하되, 띄어쓰기나 이벤트 핸들러 이용의 다양성을 제공하기 위해 핵심 필수 키워드인 defaultAvatar와 cid:를 검증값으로 수정
-- sdfsdfsdf
 <br><br>
 <img src="https://github.com/user-attachments/assets/784e38cc-c3be-458c-b06b-3e6c70c43b9a" width="1000" height="550">
 
