@@ -1,0 +1,5 @@
+# post 디렉토리 내에서 .json 파일에 대한 모든 접근을 차단
+<FilesMatch "\.(json)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>

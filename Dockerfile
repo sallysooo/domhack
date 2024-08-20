@@ -11,6 +11,11 @@ RUN apt-get update -y && \
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
+RUN sed -i '/<\/VirtualHost>/i\
+    <Directory /var/www/html>\n\
+        AllowOverride All\n\
+    </Directory>' /etc/apache2/sites-available/000-default.conf
+
 # Set up PHP session directory
 RUN mkdir -p /var/lib/php/sessions && \
     chown -R www-data:www-data /var/lib/php/sessions && \
